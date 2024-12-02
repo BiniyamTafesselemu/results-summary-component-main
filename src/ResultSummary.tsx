@@ -1,5 +1,5 @@
-import data from '../data.json'; // Adjusted path for main directory
-
+import data from '../data.json';
+import assets from './assets/assets'; // Ensure this path is correct
 
 type Category = 'Reaction' | 'Memory' | 'Verbal' | 'Visual';
 
@@ -31,25 +31,25 @@ const ResultSummary = () => {
                 // Define colors for each category
                 const colors = {
                   "Reaction": {
-                    text: 'hsl(0, 100%, 67%)', // Light red
-                    bg: 'hsl(0, 100%, 92%, 0.3)' // Light red blurred
+                    text: 'hsl(0, 100%, 67%)',
+                    bg: 'hsl(0, 100%, 92%, 0.3)'
                   },
                   "Memory": {
-                    text: 'hsl(39, 100%, 56%)', // Orangey yellow
-                    bg: 'hsl(39, 100%, 86%, 0.3)' // Orangey yellow blurred
+                    text: 'hsl(39, 100%, 56%)',
+                    bg: 'hsl(39, 100%, 86%, 0.3)'
                   },
                   "Verbal": {
-                    text: 'hsl(166, 100%, 37%)', // Green teal
-                    bg: 'hsl(166, 100%, 92%, 0.3)' // Green teal blurred
+                    text: 'hsl(166, 100%, 37%)',
+                    bg: 'hsl(166, 100%, 92%, 0.3)'
                   },
                   "Visual": {
-                    text: 'hsl(234, 85%, 45%)', // Deep blue
-                    bg: 'hsl(234, 85%, 90%, 0.3)' // Deep blue blurred
+                    text: 'hsl(234, 85%, 45%)',
+                    bg: 'hsl(234, 85%, 90%, 0.3)'
                   }
                 };
 
                 // Get the colors based on the category
-                const { text, bg } = colors[item.category as Category] || { text: 'text-black', bg: 'bg-gray-200' };// Fallback colors
+                const { text, bg } = colors[item.category as Category] || { text: 'text-black', bg: 'bg-gray-200' }; // Fallback colors
 
                 return (
                   <div 
@@ -58,9 +58,9 @@ const ResultSummary = () => {
                     style={{ backgroundColor: bg }} // Set the background color
                   >
                     <img 
-                      src={item.icon} 
+                      src={assets[item.icon]} // Use the assets for the icon source
                       alt={item.category} 
-                      className="w-[40px] h-[40px] mr-[10px] object-contain" // Control icon size
+                      className="w-[40px] h-[40px] mr-[10px] object-contain"
                     />
                     <div className="flex flex-grow justify-between items-center">
                       <span 

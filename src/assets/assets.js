@@ -5,10 +5,11 @@ import iconverbal from './icon-verbal.svg'
 import iconvisual from './icon-visual.svg'
 
 
-export default assets={
+const assets={
     favicon,
     iconmemory,
     iconreaction,
     iconverbal,
     iconvisual
 }
+export default assets
