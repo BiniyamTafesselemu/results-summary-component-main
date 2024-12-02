@@ -1,5 +1,6 @@
 import data from '../data.json';
-import assets from './assets/assets'; // Ensure this path is correct
+// @ts-expect-error 'rejected'
+import assets from './assets/assets'; 
 
 type Category = 'Reaction' | 'Memory' | 'Verbal' | 'Visual';
 
