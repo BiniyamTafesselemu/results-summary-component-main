@@ -1,5 +1,8 @@
 import data from '../data.json'; // Adjusted path for main directory
 
+
+type Category = 'Reaction' | 'Memory' | 'Verbal' | 'Visual';
+
 const ResultSummary = () => {
     return (
       <div className="flex flex-col sm:flex-row justify-center items-center h-screen">
@@ -46,7 +49,7 @@ const ResultSummary = () => {
                 };
 
                 // Get the colors based on the category
-                const { text, bg } = colors[item.category] || { text: 'text-black', bg: 'bg-gray-200' }; // Fallback colors
+                const { text, bg } = colors[item.category as Category] || { text: 'text-black', bg: 'bg-gray-200' };// Fallback colors
 
                 return (
                   <div 
